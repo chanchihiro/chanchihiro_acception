@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A87D5882137BD1300EF73B1 /* chanchihiro_acceptanceView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A87D5872137BD1300EF73B1 /* chanchihiro_acceptanceView.h */; };
-		6A87D58A2137BD1300EF73B1 /* chanchihiro_acceptanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A87D5892137BD1300EF73B1 /* chanchihiro_acceptanceView.m */; };
+		6A87D5922137BD7B00EF73B1 /* chanchihiro_acceptanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87D5912137BD7B00EF73B1 /* chanchihiro_acceptanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A87D5842137BD1300EF73B1 /* chanchihiro-acceptance.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "chanchihiro-acceptance.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A87D5872137BD1300EF73B1 /* chanchihiro_acceptanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chanchihiro_acceptanceView.h; sourceTree = "<group>"; };
-		6A87D5892137BD1300EF73B1 /* chanchihiro_acceptanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chanchihiro_acceptanceView.m; sourceTree = "<group>"; };
 		6A87D58B2137BD1400EF73B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A87D5912137BD7B00EF73B1 /* chanchihiro_acceptanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chanchihiro_acceptanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +46,8 @@
 		6A87D5862137BD1300EF73B1 /* chanchihiro-acceptance */ = {
 			isa = PBXGroup;
 			children = (
-				6A87D5872137BD1300EF73B1 /* chanchihiro_acceptanceView.h */,
-				6A87D5892137BD1300EF73B1 /* chanchihiro_acceptanceView.m */,
 				6A87D58B2137BD1400EF73B1 /* Info.plist */,
+				6A87D5912137BD7B00EF73B1 /* chanchihiro_acceptanceView.swift */,
 			);
 			path = "chanchihiro-acceptance";
 			sourceTree = "<group>";
@@ -62,7 +59,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A87D5882137BD1300EF73B1 /* chanchihiro_acceptanceView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +73,7 @@
 				6A87D5802137BD1300EF73B1 /* Frameworks */,
 				6A87D5812137BD1300EF73B1 /* Headers */,
 				6A87D5822137BD1300EF73B1 /* Resources */,
+				6A87D5932137BE4C00EF73B1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -98,6 +95,7 @@
 				TargetAttributes = {
 					6A87D5832137BD1300EF73B1 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -129,12 +127,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A87D5932137BE4C00EF73B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "open -W \"${CODESIGNING_FOLDER_PATH}\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A87D57F2137BD1300EF73B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A87D58A2137BD1300EF73B1 /* chanchihiro_acceptanceView.m in Sources */,
+				6A87D5922137BD7B00EF73B1 /* chanchihiro_acceptanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,13 +262,18 @@
 		6A87D58F2137BD1400EF73B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9TQFP984NY;
 				INFOPLIST_FILE = "chanchihiro-acceptance/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chanchihiro.chanchihiro-acceptance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -261,13 +281,17 @@
 		6A87D5902137BD1400EF73B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9TQFP984NY;
 				INFOPLIST_FILE = "chanchihiro-acceptance/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chanchihiro.chanchihiro-acceptance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
