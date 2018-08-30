@@ -25,14 +25,6 @@ class TextSaverView: ScreenSaverView {
         self.setAttributes()
     }
     
-    override func startAnimation() {
-        super.startAnimation()
-    }
-    
-    override func stopAnimation() {
-        super.stopAnimation()
-    }
-    
     func setAttributes() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height
@@ -42,10 +34,12 @@ class TextSaverView: ScreenSaverView {
         let fontSize = w / CGFloat(self.dateFormatter.dateFormat.count - 1)
         self.textRect = NSMakeRect(0, 0, w, h / 2 + fontSize)
         
+        let fonts = NSFont(name: "Helvetica Bold", size: fontSize)
         let shadow = NSShadow()
         shadow.shadowColor = NSColor.red
         shadow.shadowBlurRadius = fontSize / 4.0
         self.textAttributes = [
+            NSFontAttributeName: fonts,
             NSForegroundColorAttributeName: NSColor.red,
             NSShadowAttributeName: shadow,
         ]
